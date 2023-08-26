@@ -7,7 +7,7 @@ export default function Home() {
   const [listArray,setListArray]=useState<string[]>([])
   function handle(e: React.FormEvent<HTMLInputElement>)
   {
-      setListValue(()=>(e.currentTarget.value))
+      setListValue(e.currentTarget.value)
   }
 
   function handleKeywordKeyPress()
@@ -19,8 +19,8 @@ export default function Home() {
   function deleteHandler(index:number)
   {
     const deletedList=[...listArray]
-    // deletedList.splice(index, 1);
-    delete deletedList[index];
+    deletedList.splice(index, 1);
+    // delete deletedList[index];
     setListArray(deletedList);
   }
 
