@@ -7,7 +7,7 @@ export default function Home() {
   const [listArray,setListArray]=useState<string[]>([])
   function handle(e: React.FormEvent<HTMLInputElement>)
   {
-      setListValue(e.currentTarget.value)
+      setListValue(()=>(e.currentTarget.value))
   }
 
   function handleKeywordKeyPress()
